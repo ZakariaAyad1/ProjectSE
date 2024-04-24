@@ -1,4 +1,4 @@
-FROM mohamed046/ry2dr:tagname
+FROM mohamed046/ry2dr:tag
 
 # Mise à jour des paquets
 RUN apt-get update -y 
