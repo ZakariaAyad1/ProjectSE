@@ -32,9 +32,9 @@ jobs:
           docker build -t $REPOSITORY:$IMAGE_TAG -f .github/workflows/Dockerfile .
           docker push $REPOSITORY:$IMAGE_TAG
       - name: Print environment variables
-        run: |
-          echo "REPOSITORY: $REPOSITORY"
-          echo "IMAGE_TAG: $IMAGE_TAG"
+        env:
+          REPOSITORY: mohamed046/ry2dr
+          IMAGE_TAG: tag
       - name: Run Docker container locally
         run: |
           docker run -d -p 8080:8080 $REPOSITORY:$IMAGE_TAG
