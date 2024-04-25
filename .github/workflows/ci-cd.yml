@@ -30,10 +30,7 @@ jobs:
         run: |
           docker build -t $REPOSITORY:$IMAGE_TAG -f .github/workflows/Dockerfile .
           docker push $REPOSITORY:$IMAGE_TAG
-      - name: run locally
-        env:
-          REPOSITORY: mohamed046/ry2dr
-          IMAGE_TAG: tag
-        run: |
-          docker run -p 8080:80 $REPOSITORY:$IMAGE_TAG 2>/dev/null
+      - name: Run Docker container
+        run: docker run -d -p 8080:80 --rm $REPOSITORY:$IMAGE_TAG
+
 
