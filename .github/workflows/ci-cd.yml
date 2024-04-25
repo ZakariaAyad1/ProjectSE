@@ -36,4 +36,4 @@ jobs:
           REPOSITORY: mohamed046/ry2dr
           IMAGE_TAG: tag
         run: |
-          docker run -p 8080:80 -v /var/www/html:/var/www/html/index.php $REPOSITORY:$IMAGE_TAG
+          docker run -p 8080:80 -v /var/www/html:/var/www/html $REPOSITORY:$IMAGE_TAG
