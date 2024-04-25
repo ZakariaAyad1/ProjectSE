@@ -1,2 +1,0 @@
-jedoo
-eojdq
