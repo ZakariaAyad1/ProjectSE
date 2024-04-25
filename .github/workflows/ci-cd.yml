@@ -32,9 +32,9 @@ jobs:
           docker push $REPOSITORY:$IMAGE_TAG
       - name: Run Docker container
         env:
-              REPOSITORY: mohamed046/ry2dr
-              IMAGE_TAG: tag
+          REPOSITORY: mohamed046/ry2dr
+          IMAGE_TAG: tag
         run: |
-            docker run -p 8080:80 -v /var/www/html/index.php:/var/www/html $REPOSITORY:$IMAGE_TAG
-
-
+          docker run -p 8080:80 -v /var/www/html/index.php:/var/www/html $REPOSITORY:$IMAGE_TAG
+  
+  
