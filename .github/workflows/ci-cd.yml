@@ -34,5 +34,3 @@ jobs:
         env:
           REPOSITORY: mohamed046/ry2dr
           IMAGE_TAG: tag
-        run: |
-          docker run $REPOSITORY:$IMAGE_TAG
