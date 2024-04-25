@@ -35,4 +35,4 @@ jobs:
           REPOSITORY: mohamed046/ry2dr
           IMAGE_TAG: tag
         run: |
-           docker run -P 8080:80 $REPOSITORY:$IMAGE_TAG
+           docker run -p 8080:443 $REPOSITORY:$IMAGE_TAG
