@@ -7,4 +7,4 @@ RUN apt-get update -y
 COPY . ./
 
 # Exposez le port 8080 pour accéder à l'application
-EXPOSE 90
+EXPOSE 8080
