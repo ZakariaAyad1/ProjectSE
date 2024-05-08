@@ -1,4 +1,4 @@
-name: Deploy Application
+name: Build and Push Docker Images
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - manyDockerfiles
 
 jobs:
-  deploy:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,13 +19,23 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Pull Docker images
+      - name: Build and push Nginx image
         run: |
-          docker pull mohamed046/ry2dr:nginx
-          docker pull mohamed046/ry2dr:angular
-          docker pull mohamed046/ry2dr:php
-          docker pull mohamed046/ry2dr:mysql
+          docker build -t mohamed046/ry2dr:nginx -f ./Dockerfile_nginx .
+          docker push mohamed046/ry2dr:nginx
 
-      - name: Deploy with Docker Compose
-        run: docker-compose -f docker-compose.yml up -d
+      - name: Build and push Angular image
+        run: |
+          docker build -t mohamed046/ry2dr:angular -f ./Dockerfile_angular .
+          docker push mohamed046/ry2dr:angular
+
+      - name: Build and push PHP image
+        run: |
+          docker build -t mohamed046/ry2dr:php -f ./Dockerfile_php .
+          docker push mohamed046/ry2dr:php
+
+      - name: Build and push MySQL image
+        run: |
+          docker build -t mohamed046/ry2dr:mysql -f ./Dockerfile_mysql .
+          docker push mohamed046/ry2dr:mysql
 
