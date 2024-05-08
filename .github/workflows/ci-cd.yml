@@ -21,21 +21,21 @@ jobs:
 
       - name: Build and push Nginx image
         run: |
-          docker build -t mohamed046/ry2dr:nginx -f ./Dockerfile_nginx .
+          docker build -t mohamed046/ry2dr:nginx -f Dockerfile_nginx .
           docker push mohamed046/ry2dr:nginx
 
       - name: Build and push Angular image
         run: |
-          docker build -t mohamed046/ry2dr:angular -f ./Dockerfile_angular .
+          docker build -t mohamed046/ry2dr:angular -f Dockerfile_angular .
           docker push mohamed046/ry2dr:angular
 
       - name: Build and push PHP image
         run: |
-          docker build -t mohamed046/ry2dr:php -f ./Dockerfile_php .
+          docker build -t mohamed046/ry2dr:php -f Dockerfile_php .
           docker push mohamed046/ry2dr:php
 
       - name: Build and push MySQL image
         run: |
-          docker build -t mohamed046/ry2dr:mysql -f ./Dockerfile_mysql .
+          docker build -t mohamed046/ry2dr:mysql -f Dockerfile_mysql .
           docker push mohamed046/ry2dr:mysql
 
